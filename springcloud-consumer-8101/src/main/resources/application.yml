@@ -1,0 +1,15 @@
+# 服务端口
+server:
+  port: 8101
+# 服务名称
+spring:
+  application:
+    name: springcloud-consumer-80
+# 日志配
+logging:
+  # 日志级别
+  level:
+    root: debug
+  file:
+    # 日志文件名格式
+    name: logs/${spring.application.name}.log

@@ -13,6 +13,8 @@
     <modules>
         <module>springcloud-api</module>
         <module>springcloud-provider-8001</module>
+        <module>springcloud-consumer-8101</module>
+        <module>springcloud-registry-8201</module>
     </modules>
 
     <groupId>com.learn</groupId>
@@ -59,4 +61,19 @@
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <finalName>springbootcloud211217</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

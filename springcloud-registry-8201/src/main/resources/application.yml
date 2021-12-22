@@ -1,0 +1,21 @@
+server:
+  port: 8201
+
+spring:
+  application:
+    name: springcloud-registry-8201
+
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  level:
+    root: debug
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http:%${eureka.instance.hostname}:${server.port}/eureka/

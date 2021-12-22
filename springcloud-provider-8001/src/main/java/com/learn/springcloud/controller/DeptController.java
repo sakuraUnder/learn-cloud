@@ -24,7 +24,7 @@ public class DeptController {
         return deptService.insert(data);
     }
 
-    @GetMapping("/getOne")
+    @GetMapping("/getOne/{id}")
     public Dept selectByPrimaryKey(@PathVariable("id") Long id) {
         return deptService.selectByPrimaryKey(id);
     }

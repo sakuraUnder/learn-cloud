@@ -8,6 +8,31 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/db2021cloud?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: springcloud-provider-8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8201/eureka/
+  instance:
+    instance-id: springcloud-provider-8001-dept
+    prefer-ip-address: true
+
+management:
+  endpoint:
+    info:
+      enabled: true
+
+info:
+  app.name: taosun-microservicecloud
+  company.name: www.taosun.com
+
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  level:
+    root: debug
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
@@ -20,10 +45,3 @@ mybatis:
     map-underscore-to-camel-case: true
     use-column-label: true
     use-generated-keys: false
-
-logging:
-  file:
-    name: log/log.log
-  level:
-    root: debug
-    wuhobin: debug
